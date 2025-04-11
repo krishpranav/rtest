@@ -1,20 +1,14 @@
+#![allow(dead_code)]
+
 mod assertion;
-mod suite;
 mod reporter;
-mod spec;
+mod suite;
 mod suite_context;
+mod spec;
 
-pub fn add(left: u64, right: u64) -> u64 {
-    left + right
-}
 
-#[cfg(test)]
-mod tests {
-    use super::*;
-
-    #[test]
-    fn it_works() {
-        let result = add(2, 2);
-        assert_eq!(result, 4);
-    }
-}
+pub use suite::{describe, Suite, NullState};
+pub use suite_context::SuiteContext;
+pub use spec::SpecContext;
+pub use assertion::{expect, should_panic, should_not_panic};
+pub type LabResult = Result<(), String>;
