@@ -2,6 +2,7 @@ mod assertion;
 mod suite;
 mod reporter;
 mod spec;
+mod suite_context;
 
 pub fn add(left: u64, right: u64) -> u64 {
     left + right
